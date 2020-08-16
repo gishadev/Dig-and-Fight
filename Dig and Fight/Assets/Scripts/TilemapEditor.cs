@@ -17,15 +17,10 @@ public class TilemapEditor : MonoBehaviour
     public void RemoveTile(Vector2 pos)
     {
         Vector3Int intPosition = blocksTilemap.WorldToCell(pos);
-        Debug.Log(intPosition);
-        if (!blocksTilemap.HasTile(intPosition))
-        {
-            Debug.LogError("Tile wasn't found!");
-            return;
-        }
 
+        if (!blocksTilemap.HasTile(intPosition))
+            return;
+        
         blocksTilemap.SetTile(intPosition, null);
     }
-
-
 }

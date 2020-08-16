@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class Pickaxe : Tool
 {
-    public float rayLength;
-    public LayerMask collideableLayer;
+    public float radius;
+    public LayerMask blockLayer;
 
     Animator animator;
 
@@ -15,28 +14,26 @@ public class Pickaxe : Tool
 
     public override void Interact()
     {
-        ShootRay();
         animator.SetTrigger("Interact");
+        Dig();
     }
 
-    void ShootRay()
+    void Dig()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, DirToMouse(), rayLength, collideableLayer);
+        Vector2 mousePosInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D collider;
 
-        Debug.DrawRay(transform.position, DirToMouse().normalized * rayLength);
+        if (!IsInRadius(mousePosInWorld))
+            return;
 
-        if (hitInfo.collider != null)
-            if (hitInfo.collider.CompareTag("Block"))
-            {
-                Debug.Log(hitInfo.collider.name);
+        collider = Physics2D.OverlapCircle(mousePosInWorld, 0.1f, blockLayer);
 
-                TilemapEditor.Instance.RemoveTile(hitInfo.point);
-            }
-                
+        if (collider != null)
+            TilemapEditor.Instance.RemoveTile(mousePosInWorld);
     }
 
-    Vector2 DirToMouse()
+    bool IsInRadius(Vector2 pos)
     {
-        return Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        return Vector2.Distance(GameManager.Instance.player.transform.position, pos) < radius;
     }
 }
