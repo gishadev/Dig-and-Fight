@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public Tool pickaxe;
     public Tool weapon;
 
+    public bool isUsingTool;
+
     Rigidbody2D rb;
     Animator animator;
 
@@ -21,18 +23,23 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (!isUsingTool)
         {
-            pickaxeTrans.rotation = Quaternion.Euler(Vector3.forward * GetToolZRotation());
+            if (Input.GetMouseButtonDown(1))
+            {
+                pickaxeTrans.rotation = Quaternion.Euler(Vector3.forward * GetToolZRotation());
+                isUsingTool = true;
 
-            UseTool(pickaxe);
-        }
+                UseTool(pickaxe);
+            }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            weaponTrans.rotation = Quaternion.Euler(Vector3.forward * GetToolZRotation());
+            if (Input.GetMouseButtonDown(0))
+            {
+                weaponTrans.rotation = Quaternion.Euler(Vector3.forward * GetToolZRotation());
+                isUsingTool = true;
 
-            UseTool(weapon);
+                UseTool(weapon);
+            }
         }
     }
 
