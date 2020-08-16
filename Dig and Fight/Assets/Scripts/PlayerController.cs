@@ -4,13 +4,8 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
 
-    public Transform weaponTrans;
-    public Transform pickaxeTrans;
-
-    public Tool pickaxe;
-    public Tool weapon;
-
-    public bool isUsingTool;
+    public Transform handTrans;
+    [HideInInspector] public Tool nowTool;
 
     Rigidbody2D rb;
     Animator animator;
@@ -23,24 +18,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (!isUsingTool)
-        {
-            if (Input.GetMouseButtonDown(1))
-            {
-                pickaxeTrans.rotation = Quaternion.Euler(Vector3.forward * GetToolZRotation());
-                isUsingTool = true;
-
-                UseTool(pickaxe);
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                weaponTrans.rotation = Quaternion.Euler(Vector3.forward * GetToolZRotation());
-                isUsingTool = true;
-
-                UseTool(weapon);
-            }
-        }
+        if (Input.GetMouseButtonDown(0))
+            UseTool(nowTool);
     }
 
     void FixedUpdate()
@@ -61,15 +40,43 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Moving", false);
     }
 
+    #region Tools
+
     void UseTool(Tool tool)
     {
+        if (tool == null)
+            return;
+
+        handTrans.rotation = GetHandRotation();
         tool.Interact();
     }
 
-    public float GetToolZRotation()
+    // Respawning Tool on change (from hotkeys) //
+    public void ReplaceTool(ToolData newToolData)
     {
-        // Calculating Z rotation //
-        Vector2 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        return (Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg) + weapon.zOffset;
+        RemoveTool();
+        SpawnTool(newToolData);
     }
+
+    void SpawnTool(ToolData toolData)
+    {
+        GameObject toolGO = Instantiate(toolData.prefab, handTrans.transform.position, Quaternion.identity, handTrans);
+        //gearGO.transform.localRotation = Quaternion.Euler(Vector3.zero);
+
+        nowTool = toolGO.GetComponent<Tool>();
+    }
+
+    void RemoveTool()
+    {
+        if (nowTool != null)
+            Destroy(nowTool.gameObject);
+    }
+
+    // Calculating hand rotation relative to mouse pos //
+    public Quaternion GetHandRotation()
+    {
+        Vector2 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        return Quaternion.Euler(0f,0f,(Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg) + nowTool.zOffset);
+    }
+    #endregion
 }
