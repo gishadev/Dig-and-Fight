@@ -116,3 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHorizontal: 1
+  rayLength: 1
+  collideableLayer:
+    serializedVersion: 2
+    m_Bits: 256
