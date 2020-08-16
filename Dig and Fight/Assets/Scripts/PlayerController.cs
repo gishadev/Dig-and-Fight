@@ -48,6 +48,14 @@ public class PlayerController : MonoBehaviour
             return;
 
         handTrans.rotation = GetHandRotation();
+
+        //Debug.Log(handTrans.rotation.eulerAngles.z);
+        if (!tool.isHorizontal)
+            if (handTrans.rotation.eulerAngles.z > 90f && handTrans.rotation.eulerAngles.z < 270f)
+                tool.transform.localScale = new Vector3(1f, -1f, 1f);
+            else
+                tool.transform.localScale = Vector3.one;
+
         tool.Interact();
     }
 
@@ -79,7 +87,8 @@ public class PlayerController : MonoBehaviour
     public Quaternion GetHandRotation()
     {
         Vector2 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        return Quaternion.Euler(0f,0f,(Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg));
+        float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        return Quaternion.Euler(0f, 0f, rotZ);
     }
     #endregion
 }

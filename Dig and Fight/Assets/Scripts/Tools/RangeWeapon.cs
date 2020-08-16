@@ -29,6 +29,9 @@ public class RangeWeapon : Tool
 
     void Shoot()
     {
-        Instantiate(projectilePrefab, shotPos.position, shotPos.rotation);
+        float rotZ = Mathf.Atan2(-shotPos.up.y, -shotPos.up.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.Euler(0f,0f, rotZ);
+
+        Instantiate(projectilePrefab, shotPos.position, rotation);
     }
 }
