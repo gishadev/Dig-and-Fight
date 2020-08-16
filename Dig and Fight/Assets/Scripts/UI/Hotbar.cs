@@ -60,7 +60,7 @@ public class Hotbar : MonoBehaviour
             selectedKey--;
 
             if (selectedKey < 0)
-                selectedKey = 8;
+                selectedKey = 2;
 
             SelectKey();
         }
@@ -69,7 +69,7 @@ public class Hotbar : MonoBehaviour
         {
             selectedKey++;
 
-            if (selectedKey > 8)
+            if (selectedKey > 2)
                 selectedKey = 0;
 
             SelectKey();

@@ -4,4 +4,5 @@
 public class ToolData : ScriptableObject
 {
     public GameObject prefab;
+    public float zOffset = -45f;
 }

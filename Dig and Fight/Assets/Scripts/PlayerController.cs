@@ -55,13 +55,16 @@ public class PlayerController : MonoBehaviour
     public void ReplaceTool(ToolData newToolData)
     {
         RemoveTool();
+        if (newToolData == null)
+            return;
+
         SpawnTool(newToolData);
     }
 
     void SpawnTool(ToolData toolData)
     {
         GameObject toolGO = Instantiate(toolData.prefab, handTrans.transform.position, Quaternion.identity, handTrans);
-        //gearGO.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        toolGO.transform.localRotation = Quaternion.Euler(Vector3.forward * toolData.zOffset);
 
         nowTool = toolGO.GetComponent<Tool>();
     }
@@ -76,7 +79,7 @@ public class PlayerController : MonoBehaviour
     public Quaternion GetHandRotation()
     {
         Vector2 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        return Quaternion.Euler(0f,0f,(Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg) + nowTool.zOffset);
+        return Quaternion.Euler(0f,0f,(Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg));
     }
     #endregion
 }

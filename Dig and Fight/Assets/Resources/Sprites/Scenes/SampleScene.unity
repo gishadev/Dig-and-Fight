@@ -918,7 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a1ffc1352acd24ead6e1c46a28451b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolData: {fileID: 0}
+  toolData: {fileID: 11400000, guid: fe5bc8cd592ee9c4e8001853d32f2913, type: 2}
   bg: {fileID: 0}
   gearImg: {fileID: 0}
 --- !u!114 &960967952
@@ -2514,6 +2514,18 @@ PrefabInstance:
     - target: {fileID: 5297558355168842118, guid: 4499b65af57417b479460696dea89a5d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297558355909514096, guid: 4499b65af57417b479460696dea89a5d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.011780689
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297558355909514096, guid: 4499b65af57417b479460696dea89a5d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999306
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297558355909514096, guid: 4499b65af57417b479460696dea89a5d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4499b65af57417b479460696dea89a5d, type: 3}
