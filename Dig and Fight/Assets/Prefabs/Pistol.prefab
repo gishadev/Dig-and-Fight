@@ -116,9 +116,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556cfbf491f811a428c0a9102a06ec80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHorizontal: 0
   shotPos: {fileID: 7869644292134506811}
   projectilePrefab: {fileID: 3437094969168771483, guid: aa82e23e554eef6479560669d234b21c, type: 3}
-  maxAmmo: 15
+  ammo: 15
 --- !u!1 &8104009888139858227
 GameObject:
   m_ObjectHideFlags: 0

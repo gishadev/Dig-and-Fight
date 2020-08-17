@@ -20,8 +20,7 @@ public class Hotbar : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < hotkeys.Length; i++)
-            UpdateHotkeyData(i, hotkeys[i].toolData);
+        InitHotkeysData();
 
         SelectKey();
     }
@@ -39,7 +38,7 @@ public class Hotbar : MonoBehaviour
             if (i == selectedKey)
             {
                 hotkeys[i].bg.color = selectedColor;
-                GameManager.Instance.player.ReplaceTool(hotkeys[i].toolData);
+                GameManager.Instance.player.ChangeTool(i);
             }
 
             else
@@ -47,9 +46,20 @@ public class Hotbar : MonoBehaviour
         }
     }
 
-    public void UpdateHotkeyData(int index, ToolData _tool)
+    public void AddNewToolData(int index, ToolData newData)
     {
-        hotkeys[index].UpdateData(_tool);
+        hotkeys[index].UpdateData(newData);
+    }
+
+    public void RemoveToolData(int index)
+    {
+        hotkeys[index].UpdateData(null);
+    }
+
+    void InitHotkeysData()
+    {
+        for (int i = 0; i < hotkeys.Length; i++)
+            hotkeys[i].UpdateData(hotkeys[i].toolData);
     }
 
     #region Input

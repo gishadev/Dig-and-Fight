@@ -5,6 +5,8 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
 
     public Transform handTrans;
+
+    public Tool[] tools;
     [HideInInspector] public Tool nowTool;
 
     Rigidbody2D rb;
@@ -59,29 +61,33 @@ public class PlayerController : MonoBehaviour
         tool.Interact();
     }
 
-    // Respawning Tool on change (from hotkeys) //
-    public void ReplaceTool(ToolData newToolData)
+    public void ChangeTool(int index)
     {
-        RemoveTool();
-        if (newToolData == null)
+        // Disable Old Tool //
+        if (nowTool != null)
+            nowTool.Disable();
+
+        // Enable New Tool //
+        nowTool = tools[index];
+    }
+
+    public void DestroyCustomTool()
+    {
+        if (tools[2] == null)
             return;
 
-        SpawnTool(newToolData);
+        Destroy(tools[2].gameObject);
+        Hotbar.Instance.RemoveToolData(2);
     }
 
-    void SpawnTool(ToolData toolData)
-    {
-        GameObject toolGO = Instantiate(toolData.prefab, handTrans.transform.position, Quaternion.identity, handTrans);
-        toolGO.transform.localRotation = Quaternion.Euler(Vector3.forward * toolData.zOffset);
+    //void EnableNewTool(Tool tool)
+    //{
+    //    //GameObject toolGO = Instantiate(toolData.prefab, handTrans.transform.position, Quaternion.identity, handTrans);
+    //    //toolGO.transform.localRotation = Quaternion.Euler(Vector3.forward * toolData.zOffset);
 
-        nowTool = toolGO.GetComponent<Tool>();
-    }
-
-    void RemoveTool()
-    {
-        if (nowTool != null)
-            Destroy(nowTool.gameObject);
-    }
+    //    //nowTool = toolGO.GetComponent<Tool>();
+    //    nowTool = tool;
+    //}
 
     // Calculating hand rotation relative to mouse pos //
     public Quaternion GetHandRotation()

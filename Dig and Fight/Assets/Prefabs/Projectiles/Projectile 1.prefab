@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 5
-  flySpeed: 6
+  flySpeed: 8
   projMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
