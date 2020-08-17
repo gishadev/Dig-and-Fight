@@ -1,18 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class RangedEnemy : MonoBehaviour
+public class RangedEnemy : Enemy
 {
-    // Start is called before the first frame update
+    Transform target;
+
     void Start()
     {
-        
+        //target = GameObject.FindGameObjectWithTag("Player");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
+
     }
 }

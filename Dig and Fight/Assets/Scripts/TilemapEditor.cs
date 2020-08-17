@@ -14,7 +14,7 @@ public class TilemapEditor : MonoBehaviour
         Instance = this;
     }
 
-    public void RemoveTile(Vector2 pos)
+    public void DeleteTile(Vector2 pos)
     {
         Vector3Int intPosition = blocksTilemap.WorldToCell(pos);
 

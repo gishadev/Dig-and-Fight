@@ -99,4 +99,4 @@ MonoBehaviour:
   flySpeed: 8
   projMask:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 3840

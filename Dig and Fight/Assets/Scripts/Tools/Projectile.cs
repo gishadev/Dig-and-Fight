@@ -20,10 +20,15 @@ public class Projectile : MonoBehaviour
     {
         transform.Translate(direction * flySpeed * Time.deltaTime);
 
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direction, 0.5f, projMask);
-
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direction, 0.25f, projMask);
         if (hitInfo.collider != null)
+        {
+            if (hitInfo.collider.CompareTag("Enemy"))
+                hitInfo.collider.GetComponent<IDamageable>().TakeDamage();
+
             DestroyProjectile();
+        }
+            
     }
 
     void DestroyProjectile()

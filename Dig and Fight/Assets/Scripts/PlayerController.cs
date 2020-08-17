@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
+    public int health;
     public float moveSpeed;
 
     public Transform handTrans;
@@ -96,5 +97,20 @@ public class PlayerController : MonoBehaviour
         float rotZ = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         return Quaternion.Euler(0f, 0f, rotZ);
     }
+
+
     #endregion
+
+    public void TakeDamage()
+    {
+        health--;
+
+        if (health <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+        Debug.Log("U DED!");
+    }
 }
