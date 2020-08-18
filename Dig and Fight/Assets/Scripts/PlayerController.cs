@@ -2,8 +2,19 @@
 
 public class PlayerController : MonoBehaviour, IDamageable
 {
-    public int health;
+    public int maxHealth = 3;
     public float moveSpeed;
+
+    public int Health
+    {
+        get { return health; }
+        set
+        {
+            health = Mathf.Clamp(value, 0, 3);
+            UIManager.Instance.healthUI.UpdateHealthUI(health);
+        }
+    }
+    int health;
 
     public Transform handTrans;
 
@@ -17,6 +28,11 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
+        Health = maxHealth;
     }
 
     void Update()
@@ -103,14 +119,14 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void TakeDamage()
     {
-        health--;
+        Health--;
 
-        if (health <= 0)
+        if (Health <= 0)
             Die();
     }
 
     void Die()
     {
-        Debug.Log("U DED!");
+        GameManager.Instance.RestartGame();
     }
 }

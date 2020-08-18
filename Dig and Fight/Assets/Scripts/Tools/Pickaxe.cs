@@ -32,8 +32,7 @@ public class Pickaxe : Tool
 
     void Dig()
     {
-        if (tileCollider != null)
-            TilemapEditor.Instance.DeleteTile(mousePosInWorld);
+        TilemapEditor.Instance.DeleteTile(mousePosInWorld);
     }
 
     void UpdateHighlight()

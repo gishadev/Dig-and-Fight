@@ -4,14 +4,9 @@ using UnityEngine;
 public class MeleeEnemy : Enemy
 {
     [Header("Melee Variables")]
-    public float attackDelay;
-    public float digDelay;
-
     public float viewRayDist;
     public LayerMask layersOfInterest;
 
-    float dd = 0f;
-    float ad = 0f;
     Vector2 viewDir;
 
     PlayerController target;
@@ -66,18 +61,6 @@ public class MeleeEnemy : Enemy
     {
         target.TakeDamage();
         ad = 0;
-    }
-
-    void DestroyTile(Vector2 hitPoint)
-    {
-        TilemapEditor.Instance.DeleteTile(hitPoint);
-        dd = 0;
-    }
-
-    void ResetDelays()
-    {
-        ad = 0;
-        dd = 0;
     }
 
     Vector2 GetTiledPosition(Vector2 raw)

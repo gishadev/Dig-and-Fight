@@ -22,5 +22,8 @@ public class TilemapEditor : MonoBehaviour
             return;
         
         blocksTilemap.SetTile(intPosition, null);
+
+        if (GameManager.Instance.IsSetEnemySpawner())
+            GameManager.Instance.SpawnEnemySpawner((Vector2)blocksTilemap.CellToWorld(intPosition) + Vector2.up / 2f);
     }
 }
