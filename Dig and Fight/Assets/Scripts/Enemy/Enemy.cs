@@ -23,6 +23,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
         if (health <= 0)
             Die();
+
+        GameManager.Instance.ResetTimer();
     }
 
     public void DestroyTile(Vector2 hitPoint)

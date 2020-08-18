@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 15
-  flySpeed: 1
+  flySpeed: 1.75
   pivotPoint: {fileID: 4498116143041910504}
   projMask:
     serializedVersion: 2

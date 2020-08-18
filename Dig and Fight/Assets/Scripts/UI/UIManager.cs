@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { private set; get; }
     #endregion
     public HealthUI healthUI;
+    public TimerUI timerUI;
     void Awake()
     {
         Instance = this;
