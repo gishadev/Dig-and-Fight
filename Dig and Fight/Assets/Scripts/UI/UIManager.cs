@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,6 +7,7 @@ public class UIManager : MonoBehaviour
     #endregion
     public HealthUI healthUI;
     public TimerUI timerUI;
+    public AmmoUI ammoUI; 
     void Awake()
     {
         Instance = this;

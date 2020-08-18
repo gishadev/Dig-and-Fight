@@ -147,10 +147,10 @@ MonoBehaviour:
   health: 1
   moveSpeed: 2
   digDelay: 0.1
-  attackDelay: 0.25
+  attackDelay: 0.3
   dd: 0
   ad: 0
-  viewRayDist: 0.55
+  viewRayDist: 0.51
   layersOfInterest:
     serializedVersion: 2
     m_Bits: 2560

@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     [Header("Game Objects")]
     public PlayerController player;
     public EnemySpawner[] enemySpawners;
+    public GameObject[] powerUps;
 
     [Header("Game Variables")]
     [Range(0f, 100f)] public float enemySpawnerPercentage = 15f;
+    [Range(0f, 100f)] public float spawnPowerUpPercentage = 15f;
     public float maxTimeToHit;
     public float TimeToHit
     {
@@ -32,9 +34,17 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    void Start()
+    {
+        TimeToHit = maxTimeToHit;    
+    }
+
     void Update()
     {
         TimeToHit -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.R))
+            RestartGame();
     }
 
     public void RestartGame()
@@ -56,6 +66,18 @@ public class GameManager : MonoBehaviour
     public void SpawnEnemySpawner(Vector2 position)
     {
         Instantiate(enemySpawners[Random.Range(0, enemySpawners.Length)], position, Quaternion.identity);
+    }
+    #endregion
+
+    #region PowerUps
+    public bool IsSetPowerUp()
+    {
+        return Random.Range(0f, 100f) < spawnPowerUpPercentage;
+    }
+
+    public void SpawnPowerUp(Vector2 position)
+    {
+        Instantiate(powerUps[Random.Range(0, powerUps.Length)], position, Quaternion.identity);
     }
     #endregion
 }

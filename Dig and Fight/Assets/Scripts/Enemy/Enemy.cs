@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        if (GameManager.Instance.IsSetPowerUp())
+            GameManager.Instance.SpawnPowerUp(transform.position);
+
         Destroy(gameObject);
     }
 

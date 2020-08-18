@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     public Transform handTrans;
 
     public Tool[] tools;
-    [HideInInspector] public Tool nowTool;
+    public Tool nowTool;
 
     Rigidbody2D rb;
     Animator animator;
@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         handTrans.rotation = GetHandRotation();
 
-        //Debug.Log(handTrans.rotation.eulerAngles.z);
         if (!tool.isHorizontal)
             if (handTrans.rotation.eulerAngles.z > 90f && handTrans.rotation.eulerAngles.z < 270f)
                 tool.transform.localScale = new Vector3(1f, -1f, 1f);
@@ -86,6 +85,19 @@ public class PlayerController : MonoBehaviour, IDamageable
 
         // Enable New Tool //
         nowTool = tools[index];
+
+        // If Range Weapon => Show Ammo //
+        if (tools[2] == null)
+            return;
+        CheckForRanged();
+    }
+
+    void CheckForRanged()
+    {
+        if (nowTool == tools[2])
+            UIManager.Instance.ammoUI.UpdateAmmoUI(nowTool.GetComponent<RangeWeapon>().ammo);
+        else
+            UIManager.Instance.ammoUI.Disable();
     }
 
     public void DestroyCustomTool()
@@ -93,18 +105,32 @@ public class PlayerController : MonoBehaviour, IDamageable
         if (tools[2] == null)
             return;
 
+        if (nowTool == tools[2])
+            nowTool = null;
+
         Destroy(tools[2].gameObject);
+
         Hotbar.Instance.RemoveToolData(2);
     }
 
-    //void EnableNewTool(Tool tool)
-    //{
-    //    //GameObject toolGO = Instantiate(toolData.prefab, handTrans.transform.position, Quaternion.identity, handTrans);
-    //    //toolGO.transform.localRotation = Quaternion.Euler(Vector3.forward * toolData.zOffset);
+    public void SetNewCustomTool(ToolData data)
+    {
+        DestroyCustomTool();
+        Hotbar.Instance.AddNewToolData(2, data);
 
-    //    //nowTool = toolGO.GetComponent<Tool>();
-    //    nowTool = tool;
-    //}
+        Tool newTool = Instantiate(data.prefab, handTrans.transform.position, Quaternion.identity, handTrans).GetComponent<Tool>();
+        newTool.transform.localRotation = Quaternion.Euler(Vector3.forward * data.zOffset);
+
+        tools[2] = newTool;
+
+        if (nowTool == null)
+        {
+            nowTool = newTool;
+            ChangeTool(2);
+        }
+
+        CheckForRanged();
+    }
 
     // Calculating hand rotation relative to mouse pos //
     public Quaternion GetHandRotation()
@@ -128,5 +154,11 @@ public class PlayerController : MonoBehaviour, IDamageable
     void Die()
     {
         GameManager.Instance.RestartGame();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PowerUp"))
+            other.GetComponent<IPowerUp>().Upgrade();
     }
 }

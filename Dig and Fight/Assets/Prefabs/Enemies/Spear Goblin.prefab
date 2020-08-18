@@ -147,7 +147,7 @@ MonoBehaviour:
   health: 1
   moveSpeed: 1.5
   digDelay: 0.1
-  attackDelay: 1.5
+  attackDelay: 0.85
   dd: 0
   ad: 0
   viewRayDist: 0.55

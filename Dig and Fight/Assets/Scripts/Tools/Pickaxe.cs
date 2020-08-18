@@ -2,11 +2,10 @@
 
 public class Pickaxe : Tool
 {
+    [Header("Pickaxe Variables")]
     public float radius;
     public LayerMask blockLayer;
 
-    // For Checking //
-    //bool isReadyToDig = false;
     Collider2D tileCollider;
     Vector2 mousePosInWorld;
 
@@ -32,7 +31,8 @@ public class Pickaxe : Tool
 
     void Dig()
     {
-        TilemapEditor.Instance.DeleteTile(mousePosInWorld);
+        if (Vector2.Distance(transform.position, mousePosInWorld) < radius)
+            TilemapEditor.Instance.DeleteTile(mousePosInWorld);
     }
 
     void UpdateHighlight()
