@@ -14,6 +14,7 @@ public class Rocket : Projectile
             Instantiate(subProjectilePrefab, transform.position, rotation);
         }
 
+        AudioManager.Instance.PlaySFX("Explosion");
         EffectsEmitter.Emit("Small_Red_Explosion", transform.position);
         base.OnCollide(hitCollider);
     }

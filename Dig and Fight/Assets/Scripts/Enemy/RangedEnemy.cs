@@ -64,6 +64,8 @@ public class RangedEnemy : Enemy
         float rotZ = Mathf.Atan2(viewDir.y, viewDir.x) * Mathf.Rad2Deg - 45f;
         Quaternion rotation = Quaternion.Euler(0f, 0f, rotZ);
 
+        AudioManager.Instance.PlaySFX("Enemy_Shoot");
+
         Instantiate(projectilePrefab, transform.position, rotation);
         ad = 0;
     }

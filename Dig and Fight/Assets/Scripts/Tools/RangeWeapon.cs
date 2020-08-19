@@ -9,7 +9,8 @@ public class RangeWeapon : Tool
     public int ammo;
     public int projCount;
     public float spread;
-
+    [Space]
+    public string sfxName;
     Animator animator;
 
     void Awake()
@@ -20,6 +21,7 @@ public class RangeWeapon : Tool
     public override void Interact()
     {
         animator.SetTrigger("Interact");
+        AudioManager.Instance.PlaySFX(sfxName);
         Shoot();
     }
 

@@ -148,6 +148,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         Health--;
 
+        AudioManager.Instance.PlaySFX("Player_GetDmg");
+
         if (Health <= 0)
             Die();
     }
@@ -161,6 +163,9 @@ public class PlayerController : MonoBehaviour, IDamageable
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PowerUp"))
+        {
             other.GetComponent<IPowerUp>().Upgrade();
+            AudioManager.Instance.PlaySFX("PowerUp");
+        }
     }
 }

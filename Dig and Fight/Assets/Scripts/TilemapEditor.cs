@@ -23,12 +23,15 @@ public class TilemapEditor : MonoBehaviour
         
         blocksTilemap.SetTile(intPosition, null);
 
+        Vector2 worldPosition = (Vector2)blocksTilemap.CellToWorld(intPosition) + Vector2.one / 2f;
+
         if (GameManager.Instance.IsSetEnemySpawner())
-            GameManager.Instance.SpawnEnemySpawner((Vector2)blocksTilemap.CellToWorld(intPosition) + Vector2.one / 2f);
+            GameManager.Instance.SpawnEnemySpawner(worldPosition);
 
         GameManager.Instance.ResetTimer();
         ScoreSystem.Instance.AddScore(50);
 
-        EffectsEmitter.Emit("Small_Dirt_Explosion", transform.position);
+        EffectsEmitter.Emit("Small_Dirt_Explosion", worldPosition);
+        AudioManager.Instance.PlaySFX("Block_Dig");
     }
 }

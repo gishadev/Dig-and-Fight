@@ -1,0 +1,201 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3649209391204698315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3649209391204698317}
+  - component: {fileID: 3649209391204698316}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3649209391204698317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3649209391204698315}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3649209391204698316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3649209391204698315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5942539db6782314682860a748f9a556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusicList: []
+  sfxList:
+  - Name: Block_Dig
+    audioClip: {fileID: 8300000, guid: 749cb6a8008b2384d952cce129d4e585, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Click_01
+    audioClip: {fileID: 8300000, guid: 2dc3199a2840b7843bd4f0a2f9a53667, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Click_02
+    audioClip: {fileID: 8300000, guid: 60a862b96e84fbb4bac3b3a5d07e368c, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Enemy_GetDmg
+    audioClip: {fileID: 8300000, guid: fcb0f9cefbb66924bb89e70268be1631, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Enemy_Shoot
+    audioClip: {fileID: 8300000, guid: e1a07d4e0c0a0214381d0ec3610700d5, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Enemy_Spawn
+    audioClip: {fileID: 8300000, guid: 989f5ea2b5ca1c04b94b0e4c26305ff2, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Explosion
+    audioClip: {fileID: 8300000, guid: 1273f80366c22954c9b5641b6bf46961, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Player_GetDmg
+    audioClip: {fileID: 8300000, guid: 499874999a0644443a2ef9650c2f4dba, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: PowerUp
+    audioClip: {fileID: 8300000, guid: ee7305cd3849f4646ab75eb5c21dfd09, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Shoot_Launcher
+    audioClip: {fileID: 8300000, guid: 04db8afa4cf6ef643a84975ff0a5a7f9, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Shoot_Pistol
+    audioClip: {fileID: 8300000, guid: 26b9b2ad8592797498b24358b7dfd61d, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Shoot_Shotgun
+    audioClip: {fileID: 8300000, guid: 39d7ca8711560eb4f89336ed654816f5, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  - Name: Shoot_UZI
+    audioClip: {fileID: 8300000, guid: c797ef97f86c8ec479fcfd5adb5f649b, type: 3}
+    isLooping: 0
+    volume: 1
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  currentMusic:
+    Name: 
+    audioClip: {fileID: 0}
+    isLooping: 0
+    volume: 0
+    pitch: 0
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  prevMusic:
+    Name: 
+    audioClip: {fileID: 0}
+    isLooping: 0
+    volume: 0
+    pitch: 0
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
+  musicVolume: 1
+  sfxVolume: 1

@@ -20,6 +20,8 @@ public class EnemySpawner : MonoBehaviour
     }
     void SpawnEnemy()
     {
+        AudioManager.Instance.PlaySFX("Enemy_Spawn");
+
         GameObject e = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
         Instantiate(e, transform.position, e.transform.rotation);
     }

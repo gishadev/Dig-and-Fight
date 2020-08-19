@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public void TakeDamage()
     {
         health--;
+        AudioManager.Instance.PlaySFX("Enemy_GetDmg");
 
         if (health <= 0)
             Die();
