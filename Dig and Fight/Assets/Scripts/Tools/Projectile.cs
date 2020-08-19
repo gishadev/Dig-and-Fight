@@ -2,6 +2,7 @@
 
 public class Projectile : MonoBehaviour
 {
+    [Header("Projectile Variables")]
     public float lifeTime = 5f;
     public float flySpeed = 3f;
 
@@ -23,12 +24,12 @@ public class Projectile : MonoBehaviour
 
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direction, 0.25f, projMask);
         if (hitInfo.collider != null)
-        {
-            if (hitInfo.collider.CompareTag("Enemy") || hitInfo.collider.CompareTag("Player"))
-                hitInfo.collider.GetComponent<IDamageable>().TakeDamage();
+            OnCollide(hitInfo.collider);
+    }
 
-            DestroyProjectile();
-        }
+    public virtual void OnCollide(Collider2D hitCollider)
+    {
+        DestroyProjectile();
     }
 
     void DestroyProjectile()

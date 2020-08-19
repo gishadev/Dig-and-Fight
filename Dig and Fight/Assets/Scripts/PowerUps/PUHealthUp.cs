@@ -6,6 +6,7 @@ public class PUHealthUp : MonoBehaviour, IPowerUp
     {
         GameManager.Instance.player.Health++;
 
+        ScoreSystem.Instance.AddScore(15);
         Destroy(gameObject);
     }
 }

@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 100
   m_Sprite: {fileID: -309624935928846337, guid: 8682e4ab3d3536c40933fda0178159ff, type: 3}
-  m_Color: {r: 0.45882356, g: 1, b: 0.5262558, a: 1}
+  m_Color: {r: 0.3915094, g: 1, b: 0.9333645, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -119,9 +119,9 @@ MonoBehaviour:
   isHorizontal: 0
   shotPos: {fileID: 5312451692597430771}
   projectilePrefab: {fileID: 3437094969168771483, guid: aa82e23e554eef6479560669d234b21c, type: 3}
-  ammo: 50
-  projCount: 3
-  spread: 3
+  ammo: 30
+  projCount: 2
+  spread: 2.5
 --- !u!1 &6122700237799590395
 GameObject:
   m_ObjectHideFlags: 0

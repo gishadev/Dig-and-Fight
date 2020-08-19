@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if (GameManager.Instance.IsSetPowerUp())
             GameManager.Instance.SpawnPowerUp(transform.position);
 
+        ScoreSystem.Instance.AddScore(5);
         Destroy(gameObject);
     }
 

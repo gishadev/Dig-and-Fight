@@ -27,5 +27,6 @@ public class TilemapEditor : MonoBehaviour
             GameManager.Instance.SpawnEnemySpawner((Vector2)blocksTilemap.CellToWorld(intPosition) + Vector2.one / 2f);
 
         GameManager.Instance.ResetTimer();
+        ScoreSystem.Instance.AddScore(50);
     }
 }

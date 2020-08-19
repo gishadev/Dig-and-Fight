@@ -7,7 +7,8 @@ public class UIManager : MonoBehaviour
     #endregion
     public HealthUI healthUI;
     public TimerUI timerUI;
-    public AmmoUI ammoUI; 
+    public AmmoUI ammoUI;
+    public ScoreUI scoreUI;
     void Awake()
     {
         Instance = this;

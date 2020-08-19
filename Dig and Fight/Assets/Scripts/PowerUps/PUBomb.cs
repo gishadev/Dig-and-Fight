@@ -14,6 +14,7 @@ public class PUBomb : MonoBehaviour, IPowerUp
             Instantiate(projectilePrefab, transform.position, rotation);
         }
 
+        ScoreSystem.Instance.AddScore(25);
         Destroy(gameObject);
     }
 }

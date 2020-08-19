@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7472893183075330729}
   - component: {fileID: 8231832449771827906}
-  - component: {fileID: 8408838851088564159}
+  - component: {fileID: -9119337129258766824}
   m_Layer: 0
-  m_Name: Projectile 2
+  m_Name: Projectile 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,9 +27,8 @@ Transform:
   m_GameObject: {fileID: 3437094969168771483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4498116143041910504}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 1}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,8 +72,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6325014177312713299, guid: 8682e4ab3d3536c40933fda0178159ff, type: 3}
-  m_Color: {r: 1, g: 0.09803921, b: 0.22835687, a: 1}
+  m_Sprite: {fileID: -6195967459898737139, guid: 8682e4ab3d3536c40933fda0178159ff, type: 3}
+  m_Color: {r: 0.0990566, g: 0.8924585, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8408838851088564159
+--- !u!114 &-9119337129258766824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,42 +92,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3437094969168771483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f8d160b4ff4f394c8864f3411ac2936, type: 3}
+  m_Script: {fileID: 11500000, guid: 071146b06ba8ba24b963d53a10b6ca8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 15
-  flySpeed: 3.5
-  pivotPoint: {fileID: 4498116143041910504}
+  lifeTime: 5
+  flySpeed: 10
+  pivotPoint: {fileID: 7472893183075330729}
   projMask:
     serializedVersion: 2
-    m_Bits: 2816
---- !u!1 &3850722247330348282
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4498116143041910504}
-  m_Layer: 0
-  m_Name: pivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4498116143041910504
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3850722247330348282}
-  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0.213, y: 0.213, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7472893183075330729}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+    m_Bits: 1792
