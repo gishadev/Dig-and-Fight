@@ -28,5 +28,7 @@ public class TilemapEditor : MonoBehaviour
 
         GameManager.Instance.ResetTimer();
         ScoreSystem.Instance.AddScore(50);
+
+        EffectsEmitter.Emit("Small_Dirt_Explosion", transform.position);
     }
 }

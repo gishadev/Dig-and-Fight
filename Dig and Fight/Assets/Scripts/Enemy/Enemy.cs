@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour, IDamageable
             GameManager.Instance.SpawnPowerUp(transform.position);
 
         ScoreSystem.Instance.AddScore(5);
+
+        EffectsEmitter.Emit("Small_Red_Explosion", transform.position);
         Destroy(gameObject);
     }
 
@@ -36,8 +38,6 @@ public class Enemy : MonoBehaviour, IDamageable
         TilemapEditor.Instance.DeleteTile(hitPoint);
         dd = 0;
     }
-
-
     public void ResetDelays()
     {
         ad = 0;

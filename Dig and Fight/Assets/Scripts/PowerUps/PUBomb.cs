@@ -15,6 +15,8 @@ public class PUBomb : MonoBehaviour, IPowerUp
         }
 
         ScoreSystem.Instance.AddScore(25);
+
+        EffectsEmitter.Emit("Small_Gray_Explosion", transform.position);
         Destroy(gameObject);
     }
 }

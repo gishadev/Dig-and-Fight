@@ -10,6 +10,8 @@ public class PUSpeedUp : MonoBehaviour, IPowerUp
             GameManager.Instance.player.moveSpeed += toAdd;
 
         ScoreSystem.Instance.AddScore(20);
+
+        EffectsEmitter.Emit("Small_Blue_Explosion", transform.position);
         Destroy(gameObject);
     }
 }

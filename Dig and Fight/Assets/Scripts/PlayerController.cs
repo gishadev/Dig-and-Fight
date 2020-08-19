@@ -143,6 +143,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     #endregion
 
+    #region Actions
     public void TakeDamage()
     {
         Health--;
@@ -156,6 +157,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         GameManager.Instance.RestartGame();
     }
 
+    #endregion
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PowerUp"))
