@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     void Awake()
-    {        
+    {
         CreateInstance();
 
         SetUpAudioArray(backgroundMusicList);
@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        //PlayMusic("Music");
+        PlayMusic("Music");
     }
 
     private void CreateInstance()
@@ -97,10 +97,9 @@ public class AudioManager : MonoBehaviour
     private void PlayNextMusicTrack()
     {
         currentMusic.audioSource.Play();
-        if (!currentMusic.fade && prevMusic != null)
-        {
+        if (!currentMusic.fade && prevMusic.audioClip != null)
             prevMusic.audioSource.Stop();
-        }
+
         if (currentMusic.fade)
         {
             StartCoroutine(FadeIn(currentMusic));

@@ -43,7 +43,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5942539db6782314682860a748f9a556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusicList: []
+  backgroundMusicList:
+  - Name: Music
+    audioClip: {fileID: 8300000, guid: 659916a107d6ba74eb616d701ce8d288, type: 3}
+    isLooping: 1
+    volume: 0.15
+    pitch: 1
+    fadeInSpeed: 0
+    fadeOutSpeed: 0
+    fade: 0
+    go: {fileID: 0}
+    audioSource: {fileID: 0}
   sfxList:
   - Name: Block_Dig
     audioClip: {fileID: 8300000, guid: 749cb6a8008b2384d952cce129d4e585, type: 3}
