@@ -6,7 +6,7 @@ public class ScoreSystem : MonoBehaviour
     public static ScoreSystem Instance { private set; get; }
     #endregion
 
-    private int score;
+    public int Score { private set; get; }
 
     void Awake()
     {
@@ -15,7 +15,7 @@ public class ScoreSystem : MonoBehaviour
 
     public void AddScore(int count)
     {
-        score += count;
-        UIManager.Instance.scoreUI.UpdateScoreUI(score);
+        Score += count;
+        UIManager.Instance.scoreUI.UpdateScoreUI(Score);
     }
 }

@@ -18,6 +18,9 @@ public class MeleeEnemy : Enemy
 
     void Update()
     {
+        if (!GameManager.IsPlaying)
+            return;
+
         viewDir = (target.transform.position - transform.position).normalized;
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, viewDir, viewRayDist, layersOfInterest);
 

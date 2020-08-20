@@ -209,5 +209,5 @@ MonoBehaviour:
   projMask:
     serializedVersion: 2
     m_Bits: 1792
-  subProjectilePrefab: {fileID: 3437094969168771483, guid: aa82e23e554eef6479560669d234b21c, type: 3}
-  projCount: 15
+  subProjectilePrefab: {fileID: 3437094969168771483, guid: b63b0e567cdca0140b862f3a265ec059, type: 3}
+  projCount: 20

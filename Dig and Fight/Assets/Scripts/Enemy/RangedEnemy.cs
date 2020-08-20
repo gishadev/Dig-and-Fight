@@ -21,6 +21,9 @@ public class RangedEnemy : Enemy
 
     void Update()
     {
+        if (!GameManager.IsPlaying)
+            return;
+
         viewDir = (target.transform.position - transform.position).normalized;
         RaycastHit2D viewHitInfo = Physics2D.Raycast(transform.position, viewDir, viewRayDist, layersOfInterest);
         RaycastHit2D shootHitInfo = Physics2D.Raycast(transform.position, viewDir, shootRayDist, playerLayer);

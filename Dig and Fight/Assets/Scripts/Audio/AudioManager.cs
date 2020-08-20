@@ -90,23 +90,7 @@ public class AudioManager : MonoBehaviour
             if (currentMusic != null)
                 prevMusic = currentMusic;
             currentMusic = data;
-            PlayNextMusicTrack();
-        }
-    }
-
-    private void PlayNextMusicTrack()
-    {
-        currentMusic.audioSource.Play();
-        if (!currentMusic.fade && prevMusic.audioClip != null)
-            prevMusic.audioSource.Stop();
-
-        if (currentMusic.fade)
-        {
-            StartCoroutine(FadeIn(currentMusic));
-            if (prevMusic.audioSource != null)
-            {
-                StartCoroutine(FadeOut(prevMusic));
-            }
+            currentMusic.audioSource.Play();
         }
     }
 

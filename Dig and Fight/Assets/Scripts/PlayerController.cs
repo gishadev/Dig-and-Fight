@@ -37,12 +37,18 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     void Update()
     {
+        if (!GameManager.IsPlaying)
+            return;
+
         if (Input.GetMouseButtonDown(0))
             UseTool(nowTool);
     }
 
     void FixedUpdate()
     {
+        if (!GameManager.IsPlaying)
+            return;
+
         Movement();
     }
 
@@ -154,9 +160,12 @@ public class PlayerController : MonoBehaviour, IDamageable
             Die();
     }
 
-    void Die()
+    public void Die()
     {
-        GameManager.Instance.RestartGame();
+        GameManager.Instance.PauseGame();
+        gameObject.SetActive(false);
+
+        UIManager.Instance.ActivateDeathMenu();
     }
 
     #endregion

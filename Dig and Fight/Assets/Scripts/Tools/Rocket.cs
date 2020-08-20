@@ -15,7 +15,7 @@ public class Rocket : Projectile
         }
 
         AudioManager.Instance.PlaySFX("Explosion");
-        EffectsEmitter.Emit("Small_Red_Explosion", transform.position);
+        EffectsEmitter.Emit("Big_Bomb_Explosion", transform.position);
         base.OnCollide(hitCollider);
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-6621607322414873269
+--- !u!28 &-1805687614719391050
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,7 +45,7 @@ Texture2D:
     offset: 0
     size: 0
     path: 
---- !u!21 &-5423096488772404107
+--- !u!21 &-1309348647355582369
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -77,7 +77,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -6621607322414873269}
+        m_Texture: {fileID: -1805687614719391050}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: ARCADECLASSIC SDF
   m_EditorClassIdentifier: 
   hashCode: 1989904485
-  material: {fileID: -5423096488772404107}
+  material: {fileID: -1309348647355582369}
   materialHashCode: -843617970
   m_Version: 1.1.0
   m_SourceFontFileGUID: 691d1f01c6657c247a797792016e7eaf
@@ -1343,7 +1343,7 @@ MonoBehaviour:
     m_GlyphIndex: 66
     m_Scale: 1
   m_AtlasTextures:
-  - {fileID: -6621607322414873269}
+  - {fileID: -1805687614719391050}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_UsedGlyphRects:

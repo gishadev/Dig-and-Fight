@@ -12,7 +12,7 @@ public class EnemySpawner : MonoBehaviour
     }
     IEnumerator EnemySpawning()
     {
-        while (true)
+        while (GameManager.IsPlaying)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(spawnDelay);

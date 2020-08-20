@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     #region Singleton
     public static GameManager Instance { private set; get; }
     #endregion
-
+    public static bool IsPlaying { private set; get; }
     [Header("Game Objects")]
     public PlayerController player;
     public EnemySpawner[] enemySpawners;
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
             timeToHit = Mathf.Clamp(value, 0f, maxTimeToHit);
             UIManager.Instance.timerUI.UpdateTimerUI(timeToHit, maxTimeToHit);
             if (timeToHit <= 0)
-                RestartGame();
+                player.Die();
         }
     }
     float timeToHit;
@@ -36,15 +36,24 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        IsPlaying = true;
         TimeToHit = maxTimeToHit;    
     }
 
     void Update()
     {
+        if (!IsPlaying)
+            return;
+
         TimeToHit -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.R))
             RestartGame();
+    }
+
+    public void PauseGame()
+    {
+        IsPlaying = false;
     }
 
     public void RestartGame()
