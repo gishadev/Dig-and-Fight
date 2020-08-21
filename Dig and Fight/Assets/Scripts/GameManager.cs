@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadMenu()
+    {
         SceneManager.LoadScene(0);
     }
 

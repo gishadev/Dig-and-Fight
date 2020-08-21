@@ -363,7 +363,7 @@ RectTransform:
   - {fileID: 63793586}
   - {fileID: 1134059621}
   m_Father: {fileID: 1041415823}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -522,8 +522,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: DIG AND FIGHT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 96d3a79e590d9a348a7068660fd104ec, type: 2}
-  m_sharedMaterial: {fileID: -4357738907360390249, guid: 96d3a79e590d9a348a7068660fd104ec, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9713f618d6dbc1d46a4682b7a1e56473, type: 2}
+  m_sharedMaterial: {fileID: -4357738907360390249, guid: 9713f618d6dbc1d46a4682b7a1e56473, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -547,13 +547,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 133.9
-  m_fontSizeBase: 133.9
+  m_fontSize: 150
+  m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -630,7 +630,7 @@ RectTransform:
   - {fileID: 1083443027}
   - {fileID: 1161186043}
   m_Father: {fileID: 1041415823}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -957,8 +957,8 @@ RectTransform:
   - {fileID: 54104603}
   - {fileID: 1582283265}
   - {fileID: 355497773}
-  - {fileID: 310353391}
   - {fileID: 795433400}
+  - {fileID: 310353391}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

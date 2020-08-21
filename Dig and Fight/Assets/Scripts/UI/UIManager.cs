@@ -18,27 +18,22 @@ public class UIManager : MonoBehaviour
     public TimerUI timerUI;
     public AmmoUI ammoUI;
     public ScoreUI scoreUI;
-
     void Awake()
     {
         Instance = this;
     }
-
     public void ActivateDeathMenu()
     {
         deathMenu.SetActive(true);
     }
-
     public void onClick_Restart()
     {
         GameManager.Instance.RestartGame();
     }
-
     public void onClick_Menu()
     {
-        // Call Menu.
+        GameManager.Instance.LoadMenu();
     }
-
     public void onClick_WriteScore()
     {
         // Setting Username //
