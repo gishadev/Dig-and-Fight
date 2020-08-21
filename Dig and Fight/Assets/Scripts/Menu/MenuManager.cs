@@ -5,14 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameObject quitBtn;
     public GameObject musicOffImg;
     public GameObject soundOffImg;
+
+    void Start()
+    {
+#if UNITY_WEBGL
+        quitBtn.SetActive(false);
+#endif
+    }
 
     public void onClick_Play()
     {
         SceneManager.LoadScene(1);
 
         ClickSound();
+    }
+
+    public void onClick_Quit()
+    {
+        Application.Quit();
     }
 
     public void onClick_Music()

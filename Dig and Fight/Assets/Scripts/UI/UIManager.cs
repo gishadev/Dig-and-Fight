@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     #endregion
     // Death Menu.
     public GameObject deathMenu;
+    public GameObject leadersMenu;
 
     public Button writeScoreBtn;
     public TMP_Text usernameInputField;
@@ -25,6 +26,11 @@ public class UIManager : MonoBehaviour
     public void ActivateDeathMenu()
     {
         deathMenu.SetActive(true);
+        leadersMenu.SetActive(true);
+
+#if UNITY_WEBGL
+        leadersMenu.SetActive(false);
+#endif
     }
     public void onClick_Restart()
     {
