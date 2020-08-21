@@ -5,6 +5,9 @@ public class Highscores : MonoBehaviour
 {
     private static Highscores Instance;
 
+    const string privateCode = "eCnl-NwD3kKVqX68rLJmBQuD9IYPNqy063-RSgXWZKMQ";
+    const string publicCode = "5f3e79f8eb371809c4dda7ba";
+    const string webURL = "http://dreamlo.com/lb/";
 
     public Highscore[] highscoresList;
 
